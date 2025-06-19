@@ -27,7 +27,7 @@ else()
 endif()
 
 # Handle gptl. Just hardcode it for now.
-list(APPEND PIOLIBS "${INSTALL_SHAREDPATH}/lib/libgptl.a")
+list(APPEND PIOLIBS "${INSTALL_SHAREDPATH}/lib/libgptl.so")
 
 find_package(NETCDF REQUIRED)
 # Check if scorpio has hdf5 enabled
