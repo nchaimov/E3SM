@@ -3667,6 +3667,7 @@
         <arg name="gpu_bind">--gpu-bind $ENV{GPU_BIND}</arg>
         <arg name="mem_bind">--mem-bind $ENV{MEM_BIND}</arg>
         <arg name="rlimits">$ENV{RLIMITS}</arg>
+        <arg name="tau_exec">$ENV{TAU_EXEC}</arg>
       </arguments>
     </mpirun>
     <module_system type="module" allow_error="true">
@@ -3700,6 +3701,10 @@
         <env name="PALS_PING_PERIOD">240</env>
         <env name="PALS_RPC_TIMEOUT">240</env>
         <env name="RLIMITS"> </env>
+        <env name="PATH">/home/nchaimov/tau2/x86_64/bin:$ENV{PATH}</env>
+        <env name="TAU_EXEC">tau_exec -T level_zero-ittnotify-gptl-icpx-papi-ompt-mpi-pthread-python-pdt-openmp -l0 -ittnotify -gptl</env>
+        <env name="TAU_PROFILE_FORMAT">merged</env>
+        <env name="TAU_CALLPATH">1</env>
      </environment_variables>
      <environment_variables compiler="oneapi-ifxgpu">
         <env name="MPIR_CVAR_ENABLE_GPU">1</env>
